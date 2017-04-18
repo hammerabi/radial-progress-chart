@@ -82,7 +82,7 @@ function RadialProgressChart(query, options) {
   var dropshadowId = "dropshadow-" + Math.random();
   var filter = defs.append("filter").attr("id", dropshadowId);
   if(self.options.shadow.width > 0) {
-    
+
     filter.append("feGaussianBlur")
       .attr("in", "SourceAlpha")
       .attr("stdDeviation", self.options.shadow.width)
@@ -372,11 +372,13 @@ RadialProgressChart.normalizeColor = function (color, defaultColorsIterator) {
   }
 
   // Validate gradient syntax
+  /*
   if (color.linearGradient || color.radialGradient) {
     if (!color.stops || !Array.isArray(color.stops) || color.stops.length !== 2) {
       throw new Error('gradient syntax is malformed');
     }
   }
+  */
 
   // Set background when is not provided
   if (!color.background) {
